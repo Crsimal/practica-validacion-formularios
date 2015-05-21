@@ -8,11 +8,9 @@ $("miFormulario").validate({
     messages: {
     	usuario:{
     			remote: "El usuario ya existe en la bbdd."
-    	}
+    	},
     	email:{
     			remote: "Ya existe este mail"
     	}
-    },
-    submitHandler:
-}
+    }
 });
