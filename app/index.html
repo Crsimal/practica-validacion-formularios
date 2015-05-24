@@ -19,21 +19,155 @@
 </head>
 
 <body>
-
-    <div class="hero-unit">
-        <h3>Práctica validación formularios</h3>  
-    </div>
-
-    <form id="miformulario" novalidate>
-        <div class="form-group">
-            <label for="dni">DNI</label>
-            <input type="text" class="form-control" id="dni"
-            name="dni" placeholder="Introduce tu DNI">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Git Hub</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+        <!-- /.container-fluid -->
+    </nav>
     
+    <div class="container">
+    	<div class="page-header col-sm-offset-3 ">
+  <h1>Formulario de contacto<small> Cristian Rico</small></h1>
+</div>
+        <div class="col-sm-offset-3 ">
+            <h3>Información de contacto:</h3>
+            <hr>
+        </div>
+        <form class="form-horizontal" novalidate>
+            <div class="form-group">
+                <label for="nombre" class="col-sm-3 control-label">Nombre*</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="nombre" placeholder="Introduzca su nombre" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="apellidos" class="col-sm-3 control-label">Apellidos*</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="apellidos" placeholder="Introduzca sus apellidos" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="col-sm-3 control-label">Telefono*</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="telefono" placeholder="Introduzca su teléfono" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">E-mail*</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="email" placeholder="Introduzca su E-mail" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="remail" class="col-sm-3 control-label">Repita su E-mail*</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="remail" placeholder="Introduzca su E-mail de nuevo" required>
+                </div>
+            </div>
+            <div class="col-sm-offset-3 ">
+                <br>
+                <h3>Datos de facturación:</h3>
+                <hr>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="demandante">Demandante*</label>
+                <div class="col-sm-5">
+                    <select id="demandante" name="demandante" class=form-control>
+                        <option>Particular
+                            <option>Empresa
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-group">
+                <label id="etNIF" class="col-sm-3 control-label" for="NIF">NIF*</label>
+                <div class="col-sm-5">
+                    <input id="NIF" name="NIF" placeholder="Introuzca su DNI" class="form-control required" maxlength="9" required> </div>
+            </div>
+            <div class="form-group form-group">
+                <label id="etNombreFac" class="col-sm-3 control-label" for="nombreFac">Nombre*</label>
+                <div class="col-sm-5">
+                    <input id="nombreFac" name="nombreFac" placeholder="Introduzca el nombre de la empresa" class="form-control" required> </div>
+            </div>
+            <div class="form-group form-group">
+                <label class="col-sm-3 control-label" for="direccion">Dirección*</label>
+                <div class="col-sm-5">
+                    <input id="direccion" name="direccion" placeholder="Introduzca su direccion" class="form-control" required> </div>
+            </div>
+            <div class="form-group form-group">
+                <label class="col-sm-3 control-label" for="cp">CP*</label>
+                <div class="col-sm-5">
+                    <input maxlength="5" id="cp" name="cp" placeholder="Introduzca su código postal" class="form-control" required> </div>
+            </div>
+            <div class="form-group form-group">
+                <label class="col-sm-3 control-label" for="pais">País*</label>
+                <div class="col-sm-5">
+                    <input id="pais" name="Pais" placeholder="" class="form-control" value="España" required> </div>
+            </div>
+            <div class="form-group form-group">
+                <label class="col-sm-3 control-label" for="provincia">Provincia*</label>
+                <div class="col-sm-5">
+                    <input id="provincia" name="provincia" placeholder="" class="form-control" required> </div>
+            </div>
+            <div class="form-group form-group">
+                <label class="col-sm-3 control-label" for="localidad">Localidad*</label>
+                <div class="col-sm-5">
+                    <select id="localidad" name="localidad" class="form-control" > </select>
+                </div>
+            </div>
+            <div class="form-group form-group">
+                <label class="col-sm-3 control-label" for="IBAN">Código IBAN*</label>
+                <div class="col-sm-5">
+                    <input id="IBAN" name="IBAN" placeholder="Introduzca su código IBAN" class="form-control required maxlength=34"> </div>
+            </div>
+            <div class="form-group form-group">
+                <label class="col-sm-3 control-label" for="pago">Forma de pago*</label>
+                <div class="col-sm-5">
+                    <select id="pago" name="pago" class="form-control">
+                        <option>Mensual
+                            <option>Trimestral
+                                <option>Anual </select>
+                </div>
+            </div>
+            <div class="col-sm-offset-3 ">
+                <br>
+                <h3>Datos de acceso:</h3>
+                <hr>
+            </div>
+            <div class="form-group">
+                <label for="usuario" class="col-sm-3 control-label">Usuario</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="usuario" placeholder="Introduzca su usuario">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Contraseña" class="col-sm-3 control-label">Contraseña</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="usuario" placeholder="Introduzca su contraseña">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-10">
+                    <button type="submit" class="btn btn-default">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
