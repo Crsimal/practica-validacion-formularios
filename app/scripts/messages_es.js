@@ -4,7 +4,7 @@
  */
 $.extend($.validator.messages, {
 	required: "Este campo es obligatorio.",
-	remote: "Por favor, rellena este campo.",
+	remote: "Este usuario ya está registrado",
 	email: "Por favor, escribe una dirección de correo válida.",
 	url: "Por favor, escribe una URL válida.",
 	date: "Por favor, escribe una fecha válida.",
