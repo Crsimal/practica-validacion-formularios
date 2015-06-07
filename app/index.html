@@ -48,7 +48,7 @@
             <h3>Información de contacto:</h3>
             <hr>
         </div>
-        <form class="form-horizontal" method="POST" id="form">
+        <form class="form-horizontal" method="POST" id="form" action="./php/terminar.php" novalidate>
             <div class="form-group">
                 <label for="nom" class="col-sm-3 control-label">Nombre*</label>
                 <div class="col-sm-5">
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="email" class="col-sm-3 control-label">E-mail*</label>
+                <label for="email" class="col-sm-3 control-label">E-mail (Será tu nombre de usuario)*</label>
                 <div class="col-sm-5">
                     <input type="text" class="form-control" id="email" placeholder="Introduzca su E-mail" name="email" required>
                 </div>
@@ -116,7 +116,7 @@
             <div class="form-group form-group">
                 <label class="col-sm-3 control-label" for="pais">País*</label>
                 <div class="col-sm-5">
-                    <select name="pais" id="pais" value="España">
+                    <select name="pais" id="pais" >
                         <option value="AF">Afganistan</option>
                         <option value="AL">Albania</option>
                         <option value="DE">Alemania</option>
@@ -391,9 +391,10 @@
                 <label class="col-sm-3 control-label" for="pago">Forma de pago*</label>
                 <div class="col-sm-5">
                     <select id="pago" name="pago" class="form-control">
-                        <option>Mensual
-                            <option>Trimestral
-                                <option>Anual </select>
+                        <option>Mensual</option>
+                            <option>Trimestral</option>
+                                <option>Anual </option>
+                                </select>
                 </div>
             </div>
             <div class="col-sm-offset-3 ">
