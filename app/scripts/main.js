@@ -1,7 +1,5 @@
 $("#form").validate({
     onkeyup: false,
-    onfocusout: false,
-    onclick: false,
     rules: {
         nombre: {
             required: true
@@ -10,12 +8,11 @@ $("#form").validate({
             required: true
 
         },
-        tel: {
+        tel: {	
             required: true,
+            number: true,
             maxlength: 9,
-            minlength: 9,
-            digits: true
-
+            minlength: 9
         },
         email: {
             required: true,
@@ -30,9 +27,10 @@ $("#form").validate({
         },
         cp: {
             required: true,
+            number: true,
             maxlength: 5,
             minlength: 5,
-            digits: true
+            
         },
         iban: {
             iban: true,
@@ -54,6 +52,46 @@ $("#form").validate({
             nifES: true,
             remote: "php/validar_nif_db.php"
         }
+    }
+});
+
+//Plugin complejidad contraseña
+$("#password").focusin(function() {
+    $("#password").complexify({}, function(valid, complexity) {
+        $("#pass").val(complexity);
+    });
+
+
+});
+
+//complejidad de la contraseña, minimo 30% para validar
+jQuery.validator.addMethod("controlPass", function(value, element) {
+    var prueba = $("#pass").val();
+    if (prueba < 30) {
+        return false;
+    } else {
+
+        return true;
+    }
+}, "Complejidad baja");
+
+//cambiar demandante
+$("#demandante").focusout(function() {
+    if ($("#demandante").val() == "empre") {
+        $("#etNIF").html("CIF:");
+        $("#etNombreFac").html("Empresa:");
+        $("#nif").attr({
+            "id": "cif",
+            "name": "cif"
+        });
+    }
+    if ($("#demandante").val() == "parti") {
+        $("#etNIF").html("NIF:");
+        $("#etNombreFac").html("Nombre:");
+        $("#cif").attr({
+            "id": "nif",
+            "name": "nif"
+        });
     }
 });
 
@@ -157,42 +195,4 @@ $("#remail").focusout(function() {
     $("#usuario").val($("#remail").val());
     $("#usuario").disabled = "true";
 });
-//cambiar demandante
-$("#demandante").focusout(function() {
-    if ($("#demandante").val() == "empre") {
-        $("#etNIF").html("CIF:");
-        $("#etNombreFac").html("Empresa:");
-        $("#nif").attr({
-            "id": "cif",
-            "name": "cif"
-        });
-    }
-    if ($("#demandante").val() == "parti") {
-        $("#etNIF").html("NIF:");
-        $("#etNombreFac").html("Nombre:");
-        $("#cif").attr({
-            "id": "nif",
-            "name": "nif"
-        });
-    }
-});
 
-//Plugin complejidad contraseña
-$("#password").focusin(function() {
-    $("#password").complexify({}, function(valid, complexity) {
-        $("#pass").val(complexity);
-    });
-
-
-});
-
-//complejidad de la contraseña, minimo 30% para validar
-jQuery.validator.addMethod("controlPass", function(value, element) {
-    var prueba = $("#pass").val();
-    if (prueba < 30) {
-        return false;
-    } else {
-
-        return true;
-    }
-}, "Complejidad baja");
